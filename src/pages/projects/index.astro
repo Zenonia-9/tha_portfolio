@@ -1,0 +1,27 @@
+---
+import { getCollection } from "astro:content";
+import ProjectFilter from "../../components/projects/ProjectFilter.jsx";
+import SectionTitle from "../../components/ui/SectionTitle.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const projects = (await getCollection("projects", ({ data }) => data.published))
+  .sort((a, b) => b.data.year - a.data.year)
+  .map((project) => ({ ...project.data, slug: project.slug }));
+---
+
+<BaseLayout
+  title="Projects | Portfolio Starter"
+  description="Sample projects for a customizable portfolio starter."
+>
+  <section class="py-10 sm:py-14">
+    <SectionTitle
+      eyebrow="Projects"
+      title="Sample project gallery"
+      description="Example projects showing how your work can be presented."
+    />
+
+    <div class="mt-10">
+      <ProjectFilter client:load projects={projects} />
+    </div>
+  </section>
+</BaseLayout>

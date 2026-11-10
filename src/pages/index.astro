@@ -1,0 +1,30 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import FeaturedProjects from "../components/home/FeaturedProjects.astro";
+---
+
+<BaseLayout
+  title="Portfolio Starter"
+  description="A customizable portfolio starter for software developers and creative professionals."
+>
+  <section class="grid min-h-[calc(100vh-80px)] items-center gap-10 pb-16 pt-12 lg:grid-cols-[1.05fr_0.95fr]">
+    <div>
+      <p class="font-mono text-sm uppercase tracking-[0.28em] text-secondary">Your name here</p>
+      <h1 class="mt-4 font-display text-6xl font-bold leading-tight tracking-[-0.04em] text-text sm:text-8xl">
+        Your<br /><span class="neon-text">Portfolio</span>
+      </h1>
+      <p class="mt-6 max-w-2xl text-lg leading-8 text-muted">
+        Add a short introduction, your role, and the kind of work you enjoy. Replace this sample content with details you choose to share.
+      </p>
+      <div class="mt-8 flex flex-wrap gap-4">
+        <a class="rounded-2xl border border-primary bg-primary px-7 py-4 text-sm font-bold text-black shadow-glow hover:-translate-y-1" href="/projects">Explore projects →</a>
+        <a class="rounded-2xl border border-border bg-card/80 px-7 py-4 text-sm font-bold text-text hover:border-secondary/50" href="/contact">Contact</a>
+      </div>
+    </div>
+    <div class="surface-card relative flex aspect-square items-center justify-center overflow-hidden rounded-[2rem]">
+      <div class="absolute h-48 w-48 rounded-full bg-primary/30 blur-[90px]"></div>
+      <div class="relative text-center"><div class="mx-auto flex h-40 w-40 items-center justify-center rounded-full border border-primary/40 bg-primary-soft font-display text-6xl font-bold text-primary">YN</div><p class="mt-6 font-mono text-sm uppercase tracking-[0.25em] text-muted">Your profile image</p></div>
+    </div>
+  </section>
+  <FeaturedProjects />
+</BaseLayout>

@@ -1,0 +1,8 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { ServerCog, Code2, Wrench } from "lucide-react";
+const groups = [{title:"Category One",Icon:ServerCog,skills:["Add a skill","Add a skill","Add a skill"]},{title:"Category Two",Icon:Code2,skills:["Add a skill","Add a skill","Add a skill"]},{title:"Tools",Icon:Wrench,skills:["Add a tool","Add a tool","Add a tool"]}];
+---
+<BaseLayout title="Skills | Portfolio Starter" description="A placeholder for skills and tools you choose to share.">
+<section class="section-shell"><div class="max-w-3xl"><p class="font-mono text-sm uppercase tracking-[0.28em] text-secondary">Skills</p><h1 class="mt-4 font-display text-4xl font-bold tracking-[-0.04em] text-text sm:text-6xl">Add your skills and areas of focus.</h1></div><div class="mt-12 grid gap-6 lg:grid-cols-3">{groups.map(({title,Icon,skills})=><article class="surface-card p-7"><div class="flex items-center gap-4"><span class="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-primary-soft text-primary"><Icon className="h-6 w-6" aria-hidden="true"/></span><h2 class="font-display text-2xl font-bold text-text">{title}</h2></div><ul class="mt-7 space-y-4">{skills.map(skill=><li class="rounded-xl border border-border bg-bg/55 p-4 text-muted">{skill}</li>)}</ul></article>)}</div></section>
+</BaseLayout>

@@ -1,0 +1,7 @@
+---
+import ThemeToggle from "./ThemeToggle.jsx";
+import MobileMenu from "./MobileMenu.jsx";
+const pathname=Astro.url.pathname;
+const links=[{href:"/",label:"Home"},{href:"/about",label:"About"},{href:"/skills",label:"Skills"},{href:"/projects",label:"Projects"},{href:"/experience",label:"Experience"},{href:"/contact",label:"Contact"}];
+---
+<header class="sticky top-0 z-40 border-b border-border bg-bg-elevated/90"><div class="mx-auto flex max-w-[1400px] items-center justify-between px-4 py-4"><a class="font-display text-xl font-bold text-text" href="/">Your Name</a><nav class="hidden gap-4 lg:flex">{links.map(link=><a href={link.href} class="text-muted">{link.label}</a>)}</nav><div class="flex gap-3"><ThemeToggle client:load/><MobileMenu client:load links={links} pathname={pathname}/></div></div></header>
